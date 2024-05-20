@@ -9,10 +9,11 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="" alt="Ulinz" height="30">
+        <img src="../assets/img/zee.png" alt="HayUlin" height="30">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,13 +34,13 @@
           </li>
         </ul>
         <form class="d-flex align-items-center">
-          <a href="#" class="btn sign-in-btn ms-3">Sign in</a>
-          <a href="#" class="btn sign-up-btn ms-3">Sign up</a>
+          <a href="#" class="btn btn-primary ms-3">Login</a>
+          <a href="#" class="btn btn-dark ms-3">Register</a>
         </form>
       </div>
     </div>
   </nav>
-
+<!-- End Navbar -->
 
 
 
