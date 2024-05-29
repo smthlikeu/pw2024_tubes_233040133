@@ -34,8 +34,7 @@
           </li>
         </ul>
         <form class="d-flex align-items-center">
-          <a href="login.php" class="btn btn-primary ms-3">Login</a>
-          <a href="register.php" class="btn btn-dark ms-3">Register</a>
+          <a href="logout.php" class="btn btn-danger ms-3">Logout</a>
         </form>
       </div>
     </div>
