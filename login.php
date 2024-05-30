@@ -39,22 +39,25 @@ if( isset($_POST["login"]) ) {
         if( password_verify($password, $row["password"]) ) {
             // set session
             $_SESSION["login"] = true;
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['role'] = $row['role'];
 
-            // cek remember me
-            if( isset($_POST["remember"]) ) {
-                // buat cookie
-                setcookie('id', $row['id'], time()+60);
-                setcookie('key', hash('sha256', $row['username']), time()+60);
+            // // cek remember me
+            // if( isset($_POST["remember"]) ) {
+            //     // buat cookie
+            //     setcookie('id', $row['id'], time()+60);
+            //     setcookie('key', hash('sha256', $row['username']), time()+60);
+            // }
+            if ($row['role'] == 'admin') {
+                header("Location: admin.php");
+            } else {
+                header("Location: index.php");
             }
-
-            header("Location: index.php");
-            exit;
+            exit();
         }
-
     }
-
     $error = true;
-
+    
 }
 
 ?>

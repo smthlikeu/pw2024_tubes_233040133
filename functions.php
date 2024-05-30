@@ -154,7 +154,7 @@ function registrasi($data) {
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 // return mysqli_affected_rows($conn);
-mysqli_query($conn, "INSERT INTO users VALUES('0', '$username', '$password')");
+mysqli_query($conn, "INSERT INTO users VALUES('0', '$username', '$password', 'user')");
 
 return mysqli_affected_rows($conn);
 
