@@ -57,7 +57,7 @@ if( isset($_POST["submit"]) ) {
             </li>
             <li>
                 <label for="deskripsi">Deskripsi: </label>
-                <input type="text" name="deskripsi" id="deskripsi" required value="<?= $wst["nama"] ?>">
+                <input type="text" name="deskripsi" id="deskripsi" required value="<?= $wst["deskripsi"] ?>">
             </li>
             <li>
                 <label for="gambar">Gambar: </label> <br>
