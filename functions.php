@@ -16,10 +16,8 @@ function query($query) {
 function tambah($data) {
     global $conn;
 
-    $nrp = htmlspecialchars($data["nrp"]);
-    $nama = htmlspecialchars($data["nama"]);
-    $email = htmlspecialchars($data["email"]);
-    $jurusan = htmlspecialchars($data["jurusan"]);
+    $judul = htmlspecialchars($data["judul"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
 
     // upload gambar
     $gambar = upload();
@@ -28,9 +26,9 @@ function tambah($data) {
     }
 
         // query insert data
-    $query = "INSERT INTO mahasiswa
+    $query = "INSERT INTO wisata
     VALUES
-    ('0', '$nrp', '$nama', '$email', '$jurusan', '$gambar')
+    ('0', '$judul', '$deskripsi', '$gambar')
     ";
     mysqli_query($conn, $query);
 
@@ -65,7 +63,7 @@ function upload() {
     }
 
     // cek jika ukurannya terlalu besar
-    if( $ukuranFile > 1000000 ) {
+    if( $ukuranFile > 5000000 ) {
         echo "<script>
                 alert('ukuran gambar terlalu besar!');
             </script>";
@@ -78,17 +76,15 @@ function upload() {
     $namaFileBaru .= '.';
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'assets/img/' . $namaFileBaru);
 
     return $namaFileBaru;
-
-
 }
 
 
 function hapus($id) {
     global $conn;
-    mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id");
+    mysqli_query($conn, "DELETE FROM wisata WHERE id= $id");
     return mysqli_affected_rows($conn);
 }
 
@@ -96,10 +92,8 @@ function ubah($data) {
     global $conn;
 
     $id = $data["id"];
-    $nrp = htmlspecialchars($data["nrp"]);
-    $nama = htmlspecialchars($data["nama"]);
-    $email = htmlspecialchars($data["email"]);
-    $jurusan = htmlspecialchars($data["jurusan"]);
+    $judul = htmlspecialchars($data["judul"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     // cek apakah user pilih gambar baru atau tidak
@@ -109,11 +103,9 @@ function ubah($data) {
         $gambar = upload();
     }
 
-    $query = "UPDATE mahasiswa SET
-                nrp = '$nrp',
-                nama = '$nama',
-                email = '$email',
-                jurusan = '$jurusan',
+    $query = "UPDATE wisata SET
+                judul = '$judul',
+                deskripsi = '$deskripsi',
                 gambar = '$gambar'
                 WHERE id = $id
                 ";
@@ -124,12 +116,10 @@ function ubah($data) {
 }
 
 function cari($keyword) {
-    $query = "SELECT * FROM mahasiswa
+    $query = "SELECT * FROM wisata
                 WHERE
-                nama LIKE '%$keyword%' OR
-                nrp LIKE '%$keyword%' OR
-                email LIKE '%$keyword%' OR
-                jurusan LIKE '%$keyword%'
+                judul LIKE '%$keyword%' OR
+                deskripsi LIKE '%$keyword%'
                 ";
     return query($query);
 }
@@ -164,7 +154,7 @@ function registrasi($data) {
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 // return mysqli_affected_rows($conn);
-mysqli_query($conn, "INSERT INTO users VALUES('0', '$username', '$password', 'role')");
+mysqli_query($conn, "INSERT INTO users VALUES('0', '$username', '$password')");
 
 return mysqli_affected_rows($conn);
 
