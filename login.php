@@ -67,36 +67,47 @@ if( isset($_POST["login"]) ) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    
-<h1>Halaman Login</h1>
 
 <?php if( isset($error) ) : ?>
-    <p style="color: red; font-style: italic;">username / password salah</p>
+    <script>
+            alert('Username / Password Salah!');
+    </script>
 <?php endif; ?>
 
-<form action="" method="post">
 
-    <ul>
-        <li>
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" maxlength="20">
-        </li>
-        <li>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
-        </li>
-        <li>
-            <input type="checkbox" name="remember" id="remember">
-            <label for="remember">Remember me:</label>
-        </li>
-        <li>
-            <button type="submit" name="login">Login</button>
-        </li>
-    </ul>
+    <div class="login-box">
+    
+        <form action="" method="post">
+            <div class="user-box">
+                <input type="text" name="username" id="username" maxlength="20" required="">
+                <label for="username">Username</label>
+            </div>
 
-</form>
+            <div class="user-box">
+                <input type="password" name="password" id="password" required="">
+                <label for="password">Password</label>
+            </div>
+
+            <div class="container">
+                <input type="checkbox" name="remember" id="remember" style="display: none;">
+                <label for="remember" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                        <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+                        <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                    Remember me
+                </label>
+            </div>
+            
+            <center>
+                <button type="submit" name="login">Login<span></span></button>
+            </center>
+        </form>
+        <a href="registrasi.php" class="register-link">Belum punya akun?</a>
+    </div>
 
 </body>
 </html>

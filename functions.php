@@ -132,12 +132,28 @@ function registrasi($data) {
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
 
+     // Validasi panjang username
+    if (strlen($username) > 20) {
+        echo "<script>
+                alert('Username tidak boleh lebih dari 20 karakter!');
+            </script>";
+        return false;
+    }
+
     // cek username sudah ada atau belum
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
 
     if( mysqli_fetch_assoc($result) ) {
         echo "<script>
                 alert('username sudah digunakan!');
+            </script>";
+        return false;
+    }
+
+    // cek password kosong
+    if( empty($password) || empty($password2) ) {
+        echo "<script>
+                alert('Password tidak boleh kosong!');
             </script>";
         return false;
     }

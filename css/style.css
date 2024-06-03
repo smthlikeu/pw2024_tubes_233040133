@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.jumbotron {
+    background-image: url('../assets/img/bandung.avif');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 5rem;
+}
+
+.jumbotron p {
+    font-size: 2rem;
+}

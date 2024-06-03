@@ -20,37 +20,35 @@ if ( isset($_POST["register"]) ) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Registrasi</title>
-    <style>
-        label {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/registrasi.css">
 </head>
 <body>
+
+<div class="login-box">
     
-<h1>Halaman Registrasi</h1>
+        <form action="" method="post">
+            <div class="user-box">
+                <input type="text" name="username" id="username" maxlength="20" required="">
+                <label for="username">Username</label>
+            </div>
 
-<form action="" method="post">
+            <div class="user-box">
+                <input type="password" name="password" id="password" required="">
+                <label for="password">Password</label>
+            </div>
 
-    <ul>
-        <li>
-            <label for="username">Username :</label>
-            <input type="text" name="username" id="username">
-        </li>
-        <li>
-            <label for="password">Password :</label>
-            <input type="password" name="password" id="password">
-        </li>
-        <li>
-            <label for="password2">Konfirmasi Password :</label>
-            <input type="password" name="password2" id="password2">
-        </li>
-        <li>
-            <button type="submit" name="register">Registrasi</button>
-        </li>
-    </ul>
+            <div class="user-box">
+                <input type="password" name="password2" id="password2" required="">
+                <label for="password2">Konfirmasi Password</label>
+            </div>
+            
+            <center>
+            <button type="submit" name="register">Buat Akun<span></span></button>
+            </center>
 
-</form>
+        </form>
+        <a href="login.php" class="register-link">Sudah punya akun?</a>
+    </div>
 
 </body>
 </html>
