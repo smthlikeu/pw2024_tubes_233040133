@@ -1,10 +1,15 @@
 <?php 
-// session_start();
+session_start();
 
-// if( !isset($_SESSION["login"]) ) {
-//     header("Location: login.php");
-//     exit;
-// }
+if( !isset($_SESSION["login"]) ) {
+    header("Location: login.php");
+    exit;
+}
+
+if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
+    header("Location: login.php");
+    exit();
+}
 
 require 'functions.php';
 
@@ -23,14 +28,14 @@ if( isset($_POST["submit"]) ) {
         echo "
         <script>
             alert('data berhasil diubah!');
-            document.location.href = 'index.php';
+            document.location.href = 'admin.php';
             </script>
             ";
     } else {
         echo "
         <script>
             alert('data gagal diubah!');
-            document.location.href = 'index.php';
+            document.location.href = 'admin.php';
             </script>
             ";
     }

@@ -43,11 +43,11 @@ if( isset($_POST["login"]) ) {
             $_SESSION['role'] = $row['role'];
 
             // // cek remember me
-            // if( isset($_POST["remember"]) ) {
-            //     // buat cookie
-            //     setcookie('id', $row['id'], time()+60);
-            //     setcookie('key', hash('sha256', $row['username']), time()+60);
-            // }
+            if( isset($_POST["remember"]) ) {
+                // buat cookie
+                setcookie('id', $row['id'], time()+60);
+                setcookie('key', hash('sha256', $row['username']), time()+60);
+            }
             if ($row['role'] == 'admin') {
                 header("Location: admin.php");
             } else {
@@ -81,7 +81,7 @@ if( isset($_POST["login"]) ) {
     <ul>
         <li>
             <label for="username">Username:</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" maxlength="20">
         </li>
         <li>
             <label for="password">Password:</label>

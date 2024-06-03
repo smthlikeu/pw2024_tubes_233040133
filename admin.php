@@ -22,53 +22,62 @@ if( isset($_POST["cari"]) ) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Halaman Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
 
-<a href="logout.php">Logout</a>
-    
-<h1>Daftar wisata</h1>
+    <a href="logout.php">Logout</a>
 
-<a href="tambah.php">Tambah data wisata</a>
-<br><br>
+    <h1>Daftar wisata</h1>
 
-<form action="" method="post">
+    <a href="tambah.php">Tambah data wisata</a>
+    <br><br>
 
-    <input type="text" name="keyword" size="40" autofocus="" placeholder="masukan keyword pencarian" autocomplete="off">
-    <button type="submit" name="cari">Cari!</button>
+    <form action="" method="post">
 
-</form>
+        <input type="text" name="keyword" size="40" autofocus="" placeholder="masukan keyword pencarian"
+            autocomplete="off">
+        <button type="submit" name="cari">Cari!</button>
 
-<table border="1" cellpading="10" cellspacing="0">
+    </form>
 
-    <tr>
-        <th>no.</th>
-        <th>gambar</th>
-        <th>judul</th>
-        <th>deskripsi</th>
-        <th>aksi</th>
-    </tr>
+    <table class="table ">
 
-    <?php $i = 1; ?>
-    <?php foreach( $wisata as $row) : ?>
-    <tr>
-        <td><?= $i; ?></td>
-        <td>
-            <img src="assets/img/<?= $row["gambar"]; ?>" width="75" alt="">
-        </td>
-        <td><?= $row["judul"]  ?></td>
-        <td><?= $row["deskripsi"]  ?></td>
-        <td>
-            <a href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
-            <a href="hapus.php?id=<?= $row["id"]; ?>"  onclick="return confirm('yakin?');">hapus</a>
-        </td>
-    </tr>
-    <?php $i++; ?>
-    <?php endforeach; ?>
+        <tr>
+            <th>no.</th>
+            <th>gambar</th>
+            <th>judul</th>
+            <th>deskripsi</th>
+            <th>aksi</th>
+        </tr>
 
-</table>
+        <?php $i = 1; ?>
+        <?php foreach( $wisata as $row) : ?>
+        <tr>
+            <td><?= $i; ?></td>
+            <td>
+                <img src="assets/img/<?= $row["gambar"]; ?>" width="75" alt="">
+            </td>
+            <td><?= $row["judul"]  ?></td>
+            <td><?= $row["deskripsi"]  ?></td>
+            <td>
+                <a href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
+                <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">hapus</a>
+            </td>
+        </tr>
+        <?php $i++; ?>
+        <?php endforeach; ?>
 
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
