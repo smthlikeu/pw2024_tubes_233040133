@@ -11,6 +11,9 @@ if (!isset($_SESSION['login'])) {
 // ambil username dari sesi
 $username = $_SESSION['username'];
 
+// ambil data pengguna dari database
+$result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
+$user = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +43,8 @@ $username = $_SESSION['username'];
 <div class="profile-container">
     <h1>Profil Pengguna</h1>
     <p><strong>Username:</strong> <?= htmlspecialchars($username); ?></p>
+    <p><strong>Email:</strong> <?= htmlspecialchars($user['email']); ?></p>
+    <p><strong>No HP:</strong> <?= htmlspecialchars($user['no_hp']); ?></p>
 </div>
 
 </body>

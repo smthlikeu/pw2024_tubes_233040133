@@ -2,15 +2,14 @@
 require 'functions.php';
 
 if ( isset($_POST["register"]) ) {
-
     if ( registrasi($_POST) > 0 ) {
         echo "<script>
-                alert('user baru berhasil ditambahkan');
+                alert('User baru berhasil ditambahkan');
+                window.location.href = 'login.php';
             </script>";
     } else {
         echo mysqli_error($conn);
     }
-
 }
 
 ?>
@@ -30,6 +29,16 @@ if ( isset($_POST["register"]) ) {
             <div class="user-box">
                 <input type="text" name="username" id="username" maxlength="20" required="">
                 <label for="username">Username</label>
+            </div>
+
+            <div class="user-box">
+                <input type="email" name="email" id="email" required="">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="no_hp" id="no_hp" required="">
+                <label for="no_hp">No HP</label>
             </div>
 
             <div class="user-box">

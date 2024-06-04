@@ -129,6 +129,8 @@ function registrasi($data) {
     global $conn;
 
     $username = strtolower(stripslashes($data["username"]));
+    $email = mysqli_real_escape_string($conn, $data["email"]);
+    $no_hp = mysqli_real_escape_string($conn, $data["no_hp"]);
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
 
@@ -146,6 +148,15 @@ function registrasi($data) {
     if( mysqli_fetch_assoc($result) ) {
         echo "<script>
                 alert('username sudah digunakan!');
+            </script>";
+        return false;
+    }
+
+     // cek email sudah ada atau belum
+    $result = mysqli_query($conn, "SELECT email FROM users WHERE email = '$email'");
+    if( mysqli_fetch_assoc($result) ) {
+        echo "<script>
+                alert('Email sudah digunakan!');
             </script>";
         return false;
     }
@@ -170,7 +181,8 @@ function registrasi($data) {
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 // return mysqli_affected_rows($conn);
-mysqli_query($conn, "INSERT INTO users VALUES('0', '$username', '$password', 'user')");
+$query = "INSERT INTO users (username, email, no_hp, password, role) VALUES ('$username', '$email', '$no_hp', '$password', 'user')";
+mysqli_query($conn, $query);
 
 return mysqli_affected_rows($conn);
 
