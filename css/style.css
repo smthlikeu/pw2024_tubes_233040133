@@ -6,8 +6,43 @@
   text-decoration: none;
 }
 
+
+
 body {
   background: linear-gradient(90deg, #001c6a, #000001);
+}
+
+.circle {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(#b0e633, #53ef7d);
+  border-radius: 50%;
+  position: absolute;
+  animation: move-up6 2s ease-in infinite alternate-reverse;
+  z-index: -1;
+}
+
+.circle:nth-child(1) {
+  top: 100px;
+  left: 100px;
+}
+
+.circle:nth-child(2) {
+  bottom: 100px;
+  right: 100px;
+  animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+  to {
+      transform: translateY(-10px);
+  }
+}
+
+@keyframes move-down1 {
+  to {
+      transform: translateY(10px);
+  }
 }
 
 
@@ -38,7 +73,7 @@ body {
   align-items: center;
   position: relative;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 50px auto 100px;
 }
 
 .input {
@@ -64,7 +99,7 @@ input:hover {
   outline: none;
   border-color: rgba(26, 255, 0, 0.4);
   background-color: #fff;
-  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  box-shadow: 0 0 0 4px rgba(13, 0, 250, 0.1);
 }
 
 .icon {
@@ -76,12 +111,12 @@ input:hover {
 }
 
 .card-body {
-  background-color: rgba(0, 0, 0, 0.1);
+  background: rgba(10, 19, 205, 0.1);
   backdrop-filter: blur(5px);
 }
 
 .card.custom-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(106, 255, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: none;
@@ -104,4 +139,11 @@ input:hover {
 .card-title,
 .card-text {
   color: white;
+}
+
+@media (max-width: 990px) { 
+  .circle {
+    display: none;
+  }
+
 }

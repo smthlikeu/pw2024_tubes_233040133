@@ -26,11 +26,15 @@ if( isset($_POST["cari"]) ) {
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <style>
- 
+
     </style>
 </head>
 
 <body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+
     <?php require "layout/header.php" ?>
 
     <div class="jumbotron" id="home">
@@ -39,19 +43,6 @@ if( isset($_POST["cari"]) ) {
             <p class="lead">Temukan rekomendasi tempat wisata yang wajib anda kunjungi di bandung</p>
         </div>
     </div>
-    <!-- 
-    <div class="search">
-        <input type="text" class="search__input" placeholder="Type your text" name="keyword" id="keyword">
-        <button class="search__button">
-            <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
-                <g>
-                    <path
-                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                    </path>
-                </g>
-            </svg>
-        </button>
-    </div> -->
 
     <div class="group">
         <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
@@ -68,8 +59,8 @@ if( isset($_POST["cari"]) ) {
     <div class="container" id="konten">
         <div class="row wrap justify-content-start">
             <?php foreach ($wisata as $wst) : ?>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
-                <div class="card custom-card">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 custom-card">
                     <img src="assets/img/<?= $wst['gambar']; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?= $wst['judul'] ?></h5>

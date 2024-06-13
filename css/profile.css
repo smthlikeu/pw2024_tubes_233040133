@@ -2,6 +2,13 @@ body {
     background: linear-gradient(90deg, #001c6a, #000001);
 }
 
+
+.back-to-index {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure the button is on top */
+}
 .container {
     display: flex;
     justify-content: center;
@@ -11,7 +18,7 @@ body {
     color: white;
 }
 
-.card {
+.card-wrap {
     width: 500px;
     height: 350px;
     transition: all 0.2s;
@@ -26,6 +33,9 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     backdrop-filter: blur(10px);
     border-radius: 8px;
+}
+.card-inner2 {
+    text-align: center;
 }
 
 .card-inner h1 {

@@ -38,13 +38,15 @@ if( isset($_POST["submit"]) ) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Document</title>
 </head>
-<body>
-    <h1>Tambah data wisata</h1>
+<link rel="stylesheet" href="css/tambah.css">
 
-    <form action="" method="post" enctype="multipart/form-data">
+<body>
+
+    <!-- <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <li>
                 <label for="judul">Judul: </label>
@@ -62,6 +64,35 @@ if( isset($_POST["submit"]) ) {
                 <button type="submit" name="submit">Tambah Data</button>
             </li>
         </ul>
-    </form>
+    </form> -->
+
+    <div class="login-box">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="user-box">
+                <input type="text" name="judul" id="judul" required>
+                <label for="judul">Judul: </label>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="deskripsi" id="deskripsi" required>
+                <label for="deskripsi">Deskripsi: </label>
+            </div>
+
+            <div class="gambar-custom">
+                <label for="gambar">Gambar: </label>
+                <input type="file" name="gambar" id="gambar" required>
+            </div>
+
+            <center>
+                <button type="submit" name="submit">Tambah Data<span></span></button>
+            </center>
+        </form>
+    </div>
+
+
+
+
+
 </body>
+
 </html>
