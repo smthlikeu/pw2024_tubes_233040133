@@ -20,14 +20,14 @@ if( isset($_POST["submit"]) ) {
         echo "
         <script>
             alert('data berhasil ditambahkan!');
-            document.location.href = 'admin.php';
+            document.location.href = 'wisata.php';
             </script>
             ";
     } else {
         echo "
         <script>
             alert('data gagal ditambahkan!');
-            document.location.href = 'admin.php';
+            document.location.href = 'wisata.php';
             </script>
             ";
     }
@@ -40,31 +40,16 @@ if( isset($_POST["submit"]) ) {
 <html lang="en">
 
 <head>
-    <title>Document</title>
+    <title>Tambah data</title>
 </head>
 <link rel="stylesheet" href="css/tambah.css">
 
 <body>
 
-    <!-- <form action="" method="post" enctype="multipart/form-data">
-        <ul>
-            <li>
-                <label for="judul">Judul: </label>
-                <input type="text" name="judul" id="judul" requied>
-            </li>
-            <li>
-                <label for="deskripsi">Deskripsi: </label>
-                <input type="text" name="deskripsi" id="deskripsi" required>
-            </li>
-            <li>
-                <label for="gambar">Gambar: </label>
-                <input type="file" name="gambar" id="gambar" required>
-            </li>
-            <li>
-                <button type="submit" name="submit">Tambah Data</button>
-            </li>
-        </ul>
-    </form> -->
+    <button class="kembali">
+        <a href="wisata.php">Kembali</a>
+    </button>
+
 
     <div class="login-box">
         <form action="" method="post" enctype="multipart/form-data">
@@ -88,11 +73,6 @@ if( isset($_POST["submit"]) ) {
             </center>
         </form>
     </div>
-
-
-
-
-
 </body>
 
 </html>

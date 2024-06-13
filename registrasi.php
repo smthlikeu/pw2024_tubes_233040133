@@ -15,16 +15,18 @@ if ( isset($_POST["register"]) ) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Registrasi</title>
     <link rel="stylesheet" href="css/registrasi.css">
 </head>
+
 <body>
 
-<div class="login-box">
-    
+    <div class="login-box">
+
         <form action="" method="post">
             <div class="user-box">
                 <input type="text" name="username" id="username" maxlength="20" required="">
@@ -50,9 +52,9 @@ if ( isset($_POST["register"]) ) {
                 <input type="password" name="password2" id="password2" required="">
                 <label for="password2">Konfirmasi Password</label>
             </div>
-            
+
             <center>
-            <button type="submit" name="register">Buat Akun<span></span></button>
+                <button type="submit" name="register">Buat Akun<span></span></button>
             </center>
 
         </form>
@@ -60,4 +62,5 @@ if ( isset($_POST["register"]) ) {
     </div>
 
 </body>
+
 </html>

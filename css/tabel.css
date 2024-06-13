@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.back-to-index {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td a {
+    margin: 0 5px;
+}
+
+td {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.tambah {
+    border: 2px solid green;
+    background-color: green;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+}
+
+.tambah span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tambah:hover {
+    background-color: green;
+}
+
+.hapus {
+color: red;
+text-decoration: none;
+}
+
+.ubah {
+    color: blue;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+}
+

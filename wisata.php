@@ -27,39 +27,52 @@ if( isset($_POST["cari"]) ) {
     <title>Halaman Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/tabel.css">
     <style>
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .search {
+        margin-top: 15px;
+    }
     </style>
 </head>
 
 <body>
 
+    <a href="admin.php" class="btn btn-primary back-to-index">Kembali</a>
 
     <h1>Daftar wisata</h1>
 
-    <a href="index.php">Halaman index</a>
-    <br>
+    <div class="wrapper">
 
-    <a href="tambah.php">
-        <button class="tambah">
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
-                </svg> Tambah Data Wisata
-            </span>
-        </button>
-    </a>
+        <div class="search">
+            <form action="" method="post">
 
-    <form action="" method="post">
+                <input type="text" name="keyword" size="40" autofocus="" placeholder="masukan keyword pencarian"
+                    autocomplete="off">
+                <button type="submit" name="cari">Cari!</button>
 
-        <input type="text" name="keyword" size="40" autofocus="" placeholder="masukan keyword pencarian"
-            autocomplete="off">
-        <button type="submit" name="cari">Cari!</button>
+            </form>
+        </div>
+        <a href="tambah.php">
+            <button class="tambah">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+                    </svg> Tambah Data Wisata
+                </span>
+            </button>
+        </a>
+    </div>
 
-    </form>
 
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
 
         <tr>
             <th>no.</th>
@@ -79,7 +92,7 @@ if( isset($_POST["cari"]) ) {
             <td><?= $row["judul"]  ?></td>
             <td><?= $row["deskripsi"]  ?></td>
             <td>
-                <a href="ubah.php?id=<?= $row["id"] ?>">
+                <a class="ubah" href="ubah.php?id=<?= $row["id"] ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path
@@ -88,7 +101,7 @@ if( isset($_POST["cari"]) ) {
                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                     </svg>ubah
                 </a> |
-                <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">
+                <a class="hapus" href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-trash-fill" viewBox="0 0 16 16">
                         <path
@@ -101,6 +114,7 @@ if( isset($_POST["cari"]) ) {
         <?php endforeach; ?>
 
     </table>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">

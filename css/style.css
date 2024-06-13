@@ -73,7 +73,8 @@ body {
   align-items: center;
   position: relative;
   max-width: 500px;
-  margin: 50px auto 100px;
+  margin: 0 auto 100px;
+  padding-top: 100px;
 }
 
 .input {
@@ -140,6 +141,19 @@ input:hover {
 .card-text {
   color: white;
 }
+
+.card-title{
+  text-align: center;
+}
+.card-text {
+  text-align: justify;
+}
+
+.card-wrap {
+  background-color: red;
+}
+
+
 
 @media (max-width: 990px) { 
   .circle {

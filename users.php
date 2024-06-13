@@ -24,17 +24,23 @@ if( isset($_POST["cari"]) ) {
 <html lang="en">
 
 <head>
-    <title>Halaman Table user</title>
+    <title>Halaman Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/tabel.css">
     <style>
     </style>
 </head>
 
 <body>
 
-    <table class="table table-bordered">
+    <a href="admin.php" class="btn btn-primary back-to-index">Kembali</a>
+
+
+    <h1>Daftar Users</h1>
+
+
+    <table class="table table-bordered table-responsive">
         <tr>
             <th>id</th>
             <th>Username</th>

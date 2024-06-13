@@ -44,7 +44,7 @@ if( isset($_POST["cari"]) ) {
         </div>
     </div>
 
-    <div class="group">
+    <div class="group" id="explore">
         <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
             <g>
                 <path
@@ -52,7 +52,7 @@ if( isset($_POST["cari"]) ) {
                 </path>
             </g>
         </svg>
-        <input placeholder="Search" type="search" class="input" name="keyword" id="keyword">
+        <input placeholder="Sedang mencari apa?" type="search" class="input" name="keyword" id="keyword">
     </div>
 
 
@@ -63,7 +63,7 @@ if( isset($_POST["cari"]) ) {
                 <div class="card h-100 custom-card">
                     <img src="assets/img/<?= $wst['gambar']; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $wst['judul'] ?></h5>
+                        <h5 class="card-title"><?= $wst['judul'] ?></h5><br>
                         <p class="card-text"><?= $wst['deskripsi'] ?></p>
                     </div>
                 </div>

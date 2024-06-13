@@ -39,7 +39,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'guest';
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#konten">Konten</a>
+                        <a class="nav-link" href="#explore">Explore</a>
                     </li>
                 </ul>
                 <form class="d-flex align-items-center">
